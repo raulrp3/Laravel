@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +14,20 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/users', function() {
+    return 'Users';
+});
+
+Route::get('/users/new', function() {
+    return 'New user';
+});
+
+Route::get('/users/{id?}', function($id = null) {
+    if ($id){
+        return "User: {$id}";
+    }else{
+        return 'No user';
+    }
 });
