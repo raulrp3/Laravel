@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function users(){
-        $users = [
-            'Raúl',
-            'Daniel',
-            'Ginés',
-            'Agustina'
-        ];
+        if (request()->has('empty')){
+            $users = [];
+        }else{
+            $users = [
+                'Raúl', 'Daniel', 'Ginés', 'Agustina'];
+        }
 
         return view('Users', [
             'users' => $users,
