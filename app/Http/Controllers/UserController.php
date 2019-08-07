@@ -7,7 +7,17 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function users(){
-        return 'Users';
+        $users = [
+            'Raúl',
+            'Daniel',
+            'Ginés',
+            'Agustina'
+        ];
+
+        return view('Users', [
+            'users' => $users,
+            'title' => 'Listado de usuarios'
+        ]);
     }
 
     public function usersDetail($id){
