@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>USERS</title>
-</head>
-<body>
+@extends('Layout')
+
+@section('content')
     <h1>{{ $title }}</h1>
-    <hr>
     @if (empty($users))
         <p>No hay usuarios registrados</p>
     @else
-        <ul>
+        <ul class="list-group mt-2">
             @foreach ($users as $user)
-                <li>{{ $user }}</li>
+                <li class="list-group-item">{{ $user }}</li>
             @endforeach
         </ul>
     @endif
-</body>
-</html>
+@endsection
