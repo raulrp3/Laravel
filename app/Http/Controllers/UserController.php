@@ -21,10 +21,12 @@ class UserController extends Controller
     }
 
     public function usersDetail($id){
-        return "User: {$id}";
+        return view('UsersDetail', [
+            'id' => $id
+        ]);
     }
 
     public function usersNew(){
-        return 'New user';
+        return view('UsersNew');
     }
 }
