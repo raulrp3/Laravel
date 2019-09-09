@@ -32,5 +32,7 @@ class UserSeeder extends Seeder
             'profession_id' => $anotherProfessionId,
             'is_admin' => false
         ]);
+
+        factory(User::class, 48)->create();
     }
 }
