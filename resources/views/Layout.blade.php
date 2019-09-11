@@ -10,6 +10,13 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
         <a class="navbar-brand" href="#">CURSO LARAVEL</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a href="{{ route('users') }}" class="nav-link">Listado Usuarios</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div class="container mt-3">
         @yield('content')

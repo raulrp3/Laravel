@@ -3,16 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UserController extends Controller
 {
     public function users(){
-        if (request()->has('empty')){
-            $users = [];
-        }else{
-            $users = [
-                'Raúl', 'Daniel', 'Ginés', 'Agustina'];
-        }
+        $users = User::all();
 
         return view('Users', [
             'users' => $users,
@@ -20,9 +16,13 @@ class UserController extends Controller
         ]);
     }
 
-    public function usersDetail($id){
+    public function usersDetail(User $user){
+        if ($user == null){
+            return view('Error404');
+        }
+
         return view('UsersDetail', [
-            'id' => $id
+            'user' => $user
         ]);
     }
 
